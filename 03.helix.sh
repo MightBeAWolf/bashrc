@@ -9,7 +9,7 @@ if which helix >/dev/null 2>/dev/null; then
 fi
 
 for config_file in "$(dirname "${BASH_SOURCE[0]}")"/configs/helix/*; do 
-  if ! -e "${HOME}/.config/$(basename "${config_file}")"; then 
+  if ! [[ -e "${HOME}/.config/helix/$(basename "${config_file}")" ]]; then
     cp -r "${config_file}" "${HOME}/.config/$(basename "${config_file}")"
   fi
 done
