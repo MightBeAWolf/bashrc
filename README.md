@@ -1,4 +1,3 @@
-```markdown
 # .bashrc.d Configuration Files
 
 This repository contains a collection of shell scripts and configurations
