@@ -12,3 +12,12 @@ export HISTCONTROL="ignoreboth"
 # which will append instead of overwriting the history
 shopt -s histappend
 
+
+# When sshing from a remote host into this machine, check to make sure that if
+# the TERM env var is set to 'alacritty' that alacritty is also installed on the
+# machine. Otherwise set the TERM to the universal 'ansi'. This fixes an issue
+# with broken special characters like 'backspace'
+if [[ "${TERM}" == "alacritty" ]] && ! alacritty --version &>/dev/null; then
+  export TERM='ansi'
+fi
+
