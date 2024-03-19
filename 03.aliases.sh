@@ -9,4 +9,8 @@ if command -v dust >/dev/null 2>&1; then
   alias du='dust'
 fi
 
+if command -v bat >/dev/null 2>&1; then
+  alias cat='bat -ppp'
+fi
+
 alias grep='grep --color=auto'
