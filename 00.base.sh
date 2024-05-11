@@ -17,7 +17,10 @@ shopt -s histappend
 # the TERM env var is set to 'alacritty' that alacritty is also installed on the
 # machine. Otherwise set the TERM to the universal 'ansi'. This fixes an issue
 # with broken special characters like 'backspace'
-if [[ "${TERM}" == "alacritty" ]] && ! alacritty --version &>/dev/null; then
+if [[ "${TERM}" == "alacritty" ]] && ! command -v alacritty &>/dev/null; then
   export TERM='ansi'
 fi
 
+if [[ "${TERM}" == "xterm-kitty" ]] && ! command -v kitty &>/dev/null; then
+  export TERM='ansi'
+fi
