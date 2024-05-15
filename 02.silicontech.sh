@@ -18,4 +18,13 @@ for env_path in /opt/eda/tools/*/*/*/envs/env.sh; do
 	fi
 done
 
+# Add an alias for opening the Cadence documentation and skill API finder.
+# Get the latest cadence version, as we'll use it for the documentation.
+latest_cadence="$( \
+	fd -td --exact-depth 2 IC /opt/eda/tools/Cadence/ -x stat --format '%Y:%n' \
+	| sort -n \
+	| tail -1 \
+	| cut -d: -f2 \
+	)"
+alias "cadence-docs"="(source ${latest_cadence:?}/envs/env.sh; \${CDS}/bin/cda & \${CDS}/bin/cdsFinder &) &"
 
