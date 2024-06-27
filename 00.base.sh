@@ -18,9 +18,11 @@ shopt -s histappend
 # machine. Otherwise set the TERM to the universal 'ansi'. This fixes an issue
 # with broken special characters like 'backspace'
 if [[ "${TERM}" == "alacritty" ]] && ! command -v alacritty &>/dev/null; then
-  export TERM='ansi'
+  export TERM='xterm-256color'
+  export COLORTERM='truecolor'
 fi
 
 if [[ "${TERM}" == "xterm-kitty" ]] && ! command -v kitty &>/dev/null; then
-  export TERM='ansi'
+  export TERM='xterm-256color'
+  export COLORTERM='truecolor'
 fi
