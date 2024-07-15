@@ -12,6 +12,8 @@ export HISTCONTROL="ignoreboth"
 # which will append instead of overwriting the history
 shopt -s histappend
 
+# Disable annoying the bell notification sound
+bind 'set bell-style none'
 
 # When sshing from a remote host into this machine, check to make sure that if
 # the TERM env var is set to 'alacritty' that alacritty is also installed on the
