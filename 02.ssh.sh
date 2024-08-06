@@ -1,5 +1,8 @@
-# Initialize the keychain, if available
-if  command -v keychain >/dev/null 2>&1; then
+
+if [[ -e ~/.1password/agent.sock ]]; then
+  export SSH_AUTH_SOCK="${HOME}/.1password/agent.sock"
+elif  command -v keychain >/dev/null 2>&1; then
+  # Initialize the keychain, if available
   # Make sure there is a user ~/.local dir
   mkdir -p "${HOME}/.local"
   
