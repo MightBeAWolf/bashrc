@@ -3,7 +3,7 @@
 if [[ -e "${HOME}/.local/bin/mise" ]]; then
   eval "$("${HOME}/.local/bin/mise" activate bash)"
   if ! command -v usage; then
-    mise use -g usage
+    mise use -g usage > /dev/null
   fi
   if ! command -v _mise; then
     eval "$(mise completion bash)"
